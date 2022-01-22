@@ -392,13 +392,9 @@ function cursorClearLoc(x,y) {
 // Complete the Win process. Save the cookies, and call the winning window.
 function winShowWindow() {
    win = true;
-   setCookie("gameTime",clockCurrent);
-   setCookie("numMoves",numMoves);
-   setCookie("openRemainingUsed",openRemainingUsed);
-   setCookie("allowDisarmUsed",allowDisarmUsed);
-   setCookie("allowHintsUsed",allowHintsUsed);
+   clearBoard();
    if ((hints == 0) && (disarmed==0)) {
-    faceClick();
+    clearBoard();
    } else {
     document.face.src = facePirate.src;
    }
