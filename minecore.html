@@ -119,7 +119,7 @@ function calcHeight(maxY) {
    // 2006-09-26 Added another 10 (so +22) because users are complaining.
    // 2007-12-28 IE sux and has a new top bar, so add another +23, so +45 total extra.
    // 2013-01-29 IE still sux. Floats link address. adding a bit more, now +64
-   return ((maxY+1)*document.cellIm1_1.height +document.time1s.height +(document.bordertl.height*3) +23 +35 +16 +64 +statusbarExtra) * zoomPower(); } // }
+   return ((maxY+1)*document.cellIm1_1.height +document.time1s.height +(document.bordertl.height*3) +23 +35 +16 +statusbarExtra) * zoomPower(); } // }
 
 //
 // Variable and document setup stuff:
@@ -1127,7 +1127,7 @@ function disarmMine() {
 // Zoom goes to double size, with a 3 sizes in between (5 sizes total).
 // 4th Root of 2 (1.1892) is a great multiplier, it gives a smooth 4-step transition to double size.
 
-zoomLevel = 4;
+zoomLevel = 0;
 
 function zoomPower() {
   return Math.pow(2,zoomLevel/4); }
