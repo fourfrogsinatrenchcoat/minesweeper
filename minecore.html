@@ -387,18 +387,6 @@ function cursorClearLoc(x,y) {
    if ((pointingAtX == x) && (pointingAtY == y)) {
       pointingAtX = -1;
       pointingAtY = -1; } }
-
-
-// Complete the Win process. Save the cookies, and call the winning window.
-function winShowWindow() {
-   win = true;
-   clearBoard();
-   if ((hints == 0) && (disarmed==0)) {
-    clearBoard();
-   } else {
-    document.face.src = facePirate.src;
-   }
-}
     
 
 // Upon finishing a game call a page to record that the game was played. Helps with the stats, finding errors, etc.
@@ -450,10 +438,13 @@ function openAll() {
                if ((isBomb) && (!isFlagged)) {
                   document.images[imageIndexOf(i,j)].src = bombDeath.src; 
                   allOK = false;}
+		    makeBoard();
                else if ((!isBomb) && (isFlagged)) {
                   document.images[imageIndexOf(i,j)].src = bombMisFlagged.src; }
+		    makeBoard();
                else if (!isBomb) {
                   document.images[imageIndexOf(i,j)].src = cellOpenIm[neighborBombs].src; 
+		       makeBoard();
                } } } } } 
    return allOK;}
 
@@ -503,9 +494,10 @@ function openCell(x,y) {
          if (cellsOpen+maxNumBombs-1 == maxCells) {
             clockStop();
             winShowFlags();
-            winShowWindow();
             recordPlay();
             } } } }
+	
+	
          
 
 // Cells on stack marked to be open.  Called on an as-needed baisis.
