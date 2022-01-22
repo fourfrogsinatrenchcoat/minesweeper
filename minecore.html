@@ -104,7 +104,7 @@ catch (e) { }
 // It calculates based on the actual width of the images which allows for zooming and skinning.
 function calcWidth(maxX) {
    // Extra 22 is for window border (required).
-   return ((maxX+1)*document.cellIm1_1.width+ 2*document.bordertl.width +22 +10) * zoomPower(); }
+   return ((maxX)*document.cellIm1_1.width+ 2*document.bordertl.width +22 +10) * zoomPower(); }
 
 // Return the HEIGHT of the MineSweeper game window to be created.
 function calcHeight(maxY) {
